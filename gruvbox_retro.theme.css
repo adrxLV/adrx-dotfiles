@@ -1,138 +1,116 @@
 /**
- * @name retro-gruvbox
- * @description Retro gruvbox dark theme with JetBrains Mono font and rounded avatars.
- * @author adrxlv + refact0r
- * @version 1.0.0
+ * @name system24 (gruvbox-material-dark)
+ * @description a tui-like discord theme. based on gruvbox material dark theme.
+ * @author refact0r
+ * @version 2.0.0
+ * @website https://github.com/refact0r/system24
+ * @source https://github.com/refact0r/system24/blob/master/theme/system24-gruvbox-material-dark.theme.css
  */
+/* import theme modules */
+@import url('https://refact0r.github.io/system24/build/system24.css');
 
-/* Import JetBrains Mono font */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&display=swap');
-
-/* General Styling */
 body {
-    --font: 'JetBrains Mono', monospace; /* Use JetBrains Mono font */
-    --code-font: 'JetBrains Mono', monospace; /* Use JetBrains Mono for code as well */
+    --font: 'DM Mono';
+    --code-font: 'DM Mono';
     font-weight: 300;
     letter-spacing: -0.05ch;
 
-    /* Sizes */
     --gap: 12px;
     --divider-thickness: 4px;
     --border-thickness: 2px;
     --border-hover-transition: 0.2s ease;
-
-    /* Animation/Transition */
     --animations: on;
     --list-item-transition: 0.2s ease;
     --dms-icon-svg-transition: 0.4s ease;
-
-    /* Top bar */
     --top-bar-height: var(--gap);
     --top-bar-button-position: titlebar;
     --top-bar-title-position: off;
     --subtle-top-bar-title: off;
-
-    /* Window controls */
     --custom-window-controls: off;
     --window-control-size: 14px;
-
-    /* User panel */
+    --custom-dms-icon: hide;
+    --dms-icon-svg-url: url('');
+    --dms-icon-svg-size: 90%;
+    --dms-icon-color-before: var(--icon-secondary);
+    --dms-icon-color-after: var(--white);
+    --custom-dms-background: image;
+    --dms-background-image-url: url('https://raw.githubusercontent.com/catppuccin/catppuccin/refs/heads/main/assets/logos/exports/macchiato_square.png');
+    --dms-background-image-size: cover;
+    --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2));
+    --background-image: off;
+    --background-image-url: url('');
+    --transparency-tweaks: off;
+    --remove-bg-layer: off;
+    --panel-blur: off;
+    --blur-amount: 12px;
+    --bg-floating: var(--bg-3);
     --small-user-panel: on;
-
-    /* Rounded Avatars */
-    --avatar-radius: 50%; /* Make avatars round */
-    --unrounding: off; /* Keep other UI elements square */
+    --unrounding: on;
+    --custom-spotify-bar: on;
+    --ascii-titles: on;
+    --ascii-loader: system24;
+    --panel-labels: on;
+    --label-color: var(--text-muted);
+    --label-font-weight: 500;
 }
 
-/* Color options: Gruvbox Dark */
+/* color options */
 :root {
     --colors: on;
 
-    /* Text colors */
-    --text-0: var(--bg-4);
-    --text-1: oklch(95% 0 0);
-    --text-2: oklch(85% 0 0);
-    --text-3: oklch(75% 0 0);
-    --text-4: oklch(60% 0 0);
-    --text-5: oklch(40% 0 0);
+    /* text colors */
+    --text-0: var(--bg-3);
+    --text-1: hsl(220, 25%, 90%); /* Light greyish */
+    --text-2: #ebdbb2; /* Light beige for headings */
+    --text-3: #d79921; /* Soft yellow for normal text */
+    --text-4: #7c6f64; /* Muted text */
+    --text-5: #3c3836; /* Muted channels/chats */
 
-    /* Background and dark colors */
-    --bg-1: oklch(31% 0 0); 
-    --bg-2: oklch(27% 0 0); 
-    --bg-3: oklch(23% 0 0); 
-    --bg-4: oklch(19% 0 0); /* Main background */
-    --hover: oklch(54% 0 0 / 0.1);
-    --active: oklch(54% 0 0 / 0.2);
-    --active-2: oklch(54% 0 0 / 0.3);
-    --message-hover: var(--hover);
+    /* background and dark colors */
+    --bg-1: #504945; /* Dark grey background */
+    --bg-2: #3c3836; /* Dark background for buttons */
+    --bg-3: #282828; /* Main background */
+    --bg-4: #1d2021; /* Slightly darker background */
+    --hover: hsla(45, 10%, 45%, 0.1); /* Soft hover effect */
+    --active: hsla(45, 10%, 45%, 0.2); /* Active button background */
+    --active-2: hsla(45, 10%, 45%, 0.3); /* Extra active state */
+    --message-hover: hsla(45, 10%, 45%, 0.1);
 
-    /* Accent colors */
-    --accent-1: var(--purple-1);
-    --accent-2: var(--purple-2);
-    --accent-3: var(--purple-3);
-    --accent-4: var(--purple-4);
-    --accent-5: var(--purple-5);
-    --accent-new: var(--red-2);
+    /* accent colors */
+    --accent-1: var(--yellow-2); /* Used for links and accents */
+    --accent-2: var(--yellow-3); /* Smaller accents */
+    --accent-3: var(--yellow-4); /* Accent buttons */
+    --accent-4: var(--yellow-5); /* Accent buttons when hovered */
+    --accent-5: var(--yellow-4); /* Accent buttons when clicked */
+    --accent-new: var(--red-3); /* Red for "new" items */
+    --mention: linear-gradient(to right, color-mix(in hsl, var(--red-2), transparent 90%) 40%, transparent);
+    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--red-2), transparent 95%) 40%, transparent);
+    --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent);
+    --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent);
 
-    /* Border colors */
+    /* status indicator colors */
+    --online: var(--green-2); /* Change to Gruvbox's green */
+    --dnd: var(--red-2); /* Red for Do Not Disturb */
+    --idle: var(--yellow-2); /* Yellow for idle status */
+    --streaming: var(--purple-2); /* Purple for streaming */
+    --offline: var(--text-4); /* Greyish for offline */
+
+    /* border colors */
     --border-light: var(--hover);
     --border: var(--active);
     --border-hover: var(--accent-2);
-    --button-border: hsl(220, 0%, 100%, 0.1);
+    --button-border: hsl(45, 10%, 90%, 0.1);
 
-    /* Status indicator colors */
-    --online: var(--green-2);
-    --dnd: var(--red-2);
-    --idle: var(--yellow-2);
-    --streaming: var(--purple-2);
-    --offline: var(--text-4);
-
-    /* Gruvbox-like color palette */
-    --red-1: oklch(75% 0.13 0);
-    --red-2: oklch(70% 0.13 0);
-    --green-2: oklch(70% 0.12 170);
-    --blue-2: oklch(70% 0.11 215);
-    --yellow-2: oklch(75% 0.12 90);
-    --purple-1: oklch(75% 0.12 310);
-    --purple-2: oklch(70% 0.12 310);
-}
-
-/* Avatar styling */
-img.avatar {
-    border-radius: var(--avatar-radius);
-    border: 2px solid var(--bg-3); /* Border around avatars */
-}
-
-/* Adjust background color for panels */
-div[data-slate-editor="true"] {
-    background-color: var(--bg-4);
-}
-
-/* Buttons and Panels Styling */
-div[class*="button-"] {
-    background-color: var(--bg-3);
-    color: var(--text-1);
-    border-radius: 4px;
-    padding: 8px;
-}
-
-/* Other UI elements */
-div[class*="channel"] {
-    border-radius: 4px; /* Keep channels squared but with rounded edges */
-    background-color: var(--bg-2);
-}
-
-/* Hover states for buttons and panels */
-div[class*="button-"]:hover {
-    background-color: var(--hover);
-}
-
-div[class*="channel"]:hover {
-    background-color: var(--active);
-}
-
-/* Discord default customizations */
-:root {
-    --background-image: off; /* No background image for now */
-    --transparency-tweaks: off; /* Transparency off for clear visibility */
+    /* base colors */
+    --red-1: #fb4934; /* Red accent color */
+    --red-2: #f38b80; /* Soft red */
+    --green-1: #b8bb26; /* Green accent color */
+    --green-2: #8ec07c; /* Softer green */
+    --blue-1: #83a598; /* Blue accents */
+    --blue-2: #8ec0d8; /* Light blue */
+    --yellow-1: #fabd2f; /* Yellow accent */
+    --yellow-2: #fe8019; /* Brighter yellow */
+    --purple-1: #d3869b; /* Purple accents */
+    --purple-2: #b16286; /* Softer purple */
+    --purple-3: #d79921; /* Muted purple */
 }
