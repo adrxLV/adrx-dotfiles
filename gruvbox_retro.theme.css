@@ -6,13 +6,12 @@
  * @source https://raw.githubusercontent.com/adrxLV/adrx-dotfiles/refs/heads/config/gruvbox_retro.theme.css
 */
 
-
 /* import theme modules */
 @import url('https://refact0r.github.io/system24/build/system24.css');
 
 body {
-    --font: 'DM Mono';
-    --code-font: 'DM Mono';
+    --font: 'JetBrains Mono', monospace; /* Alteração da fonte */
+    --code-font: 'JetBrains Mono', monospace; /* Alteração da fonte */
     font-weight: 300;
     letter-spacing: -0.05ch;
 
@@ -53,6 +52,14 @@ body {
     --panel-labels: on;
     --label-color: var(--text-muted);
     --label-font-weight: 500;
+
+    /* Borda arredondada no corpo */
+    border-radius: 8px; /* Arredondando bordas */
+}
+
+/* Borda arredondada para elementos como botões e painéis */
+button, .panel, .channel, .message {
+    border-radius: 8px; /* Arredondando bordas */
 }
 
 /* color options */
