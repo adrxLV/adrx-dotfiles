@@ -1,0 +1,138 @@
+/**
+ * @name retro-gruvbox
+ * @description Retro gruvbox dark theme with JetBrains Mono font and rounded avatars.
+ * @author adrxlv + refact0r
+ * @version 1.0.0
+ */
+
+/* Import JetBrains Mono font */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&display=swap');
+
+/* General Styling */
+body {
+    --font: 'JetBrains Mono', monospace; /* Use JetBrains Mono font */
+    --code-font: 'JetBrains Mono', monospace; /* Use JetBrains Mono for code as well */
+    font-weight: 300;
+    letter-spacing: -0.05ch;
+
+    /* Sizes */
+    --gap: 12px;
+    --divider-thickness: 4px;
+    --border-thickness: 2px;
+    --border-hover-transition: 0.2s ease;
+
+    /* Animation/Transition */
+    --animations: on;
+    --list-item-transition: 0.2s ease;
+    --dms-icon-svg-transition: 0.4s ease;
+
+    /* Top bar */
+    --top-bar-height: var(--gap);
+    --top-bar-button-position: titlebar;
+    --top-bar-title-position: off;
+    --subtle-top-bar-title: off;
+
+    /* Window controls */
+    --custom-window-controls: off;
+    --window-control-size: 14px;
+
+    /* User panel */
+    --small-user-panel: on;
+
+    /* Rounded Avatars */
+    --avatar-radius: 50%; /* Make avatars round */
+    --unrounding: off; /* Keep other UI elements square */
+}
+
+/* Color options: Gruvbox Dark */
+:root {
+    --colors: on;
+
+    /* Text colors */
+    --text-0: var(--bg-4);
+    --text-1: oklch(95% 0 0);
+    --text-2: oklch(85% 0 0);
+    --text-3: oklch(75% 0 0);
+    --text-4: oklch(60% 0 0);
+    --text-5: oklch(40% 0 0);
+
+    /* Background and dark colors */
+    --bg-1: oklch(31% 0 0); 
+    --bg-2: oklch(27% 0 0); 
+    --bg-3: oklch(23% 0 0); 
+    --bg-4: oklch(19% 0 0); /* Main background */
+    --hover: oklch(54% 0 0 / 0.1);
+    --active: oklch(54% 0 0 / 0.2);
+    --active-2: oklch(54% 0 0 / 0.3);
+    --message-hover: var(--hover);
+
+    /* Accent colors */
+    --accent-1: var(--purple-1);
+    --accent-2: var(--purple-2);
+    --accent-3: var(--purple-3);
+    --accent-4: var(--purple-4);
+    --accent-5: var(--purple-5);
+    --accent-new: var(--red-2);
+
+    /* Border colors */
+    --border-light: var(--hover);
+    --border: var(--active);
+    --border-hover: var(--accent-2);
+    --button-border: hsl(220, 0%, 100%, 0.1);
+
+    /* Status indicator colors */
+    --online: var(--green-2);
+    --dnd: var(--red-2);
+    --idle: var(--yellow-2);
+    --streaming: var(--purple-2);
+    --offline: var(--text-4);
+
+    /* Gruvbox-like color palette */
+    --red-1: oklch(75% 0.13 0);
+    --red-2: oklch(70% 0.13 0);
+    --green-2: oklch(70% 0.12 170);
+    --blue-2: oklch(70% 0.11 215);
+    --yellow-2: oklch(75% 0.12 90);
+    --purple-1: oklch(75% 0.12 310);
+    --purple-2: oklch(70% 0.12 310);
+}
+
+/* Avatar styling */
+img.avatar {
+    border-radius: var(--avatar-radius);
+    border: 2px solid var(--bg-3); /* Border around avatars */
+}
+
+/* Adjust background color for panels */
+div[data-slate-editor="true"] {
+    background-color: var(--bg-4);
+}
+
+/* Buttons and Panels Styling */
+div[class*="button-"] {
+    background-color: var(--bg-3);
+    color: var(--text-1);
+    border-radius: 4px;
+    padding: 8px;
+}
+
+/* Other UI elements */
+div[class*="channel"] {
+    border-radius: 4px; /* Keep channels squared but with rounded edges */
+    background-color: var(--bg-2);
+}
+
+/* Hover states for buttons and panels */
+div[class*="button-"]:hover {
+    background-color: var(--hover);
+}
+
+div[class*="channel"]:hover {
+    background-color: var(--active);
+}
+
+/* Discord default customizations */
+:root {
+    --background-image: off; /* No background image for now */
+    --transparency-tweaks: off; /* Transparency off for clear visibility */
+}
