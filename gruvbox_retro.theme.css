@@ -52,14 +52,6 @@ body {
     --panel-labels: on;
     --label-color: var(--text-muted);
     --label-font-weight: 500;
-
-    /* Borda arredondada no corpo */
-    border-radius: 8px; /* Arredondando bordas */
-}
-
-/* Borda arredondada para elementos como botões e painéis */
-button, .panel, .channel, .message {
-    border-radius: 8px; /* Arredondando bordas */
 }
 
 /* color options */
@@ -121,4 +113,7 @@ button, .panel, .channel, .message {
     --purple-1: #d3869b; /* Purple accents */
     --purple-2: #b16286; /* Softer purple */
     --purple-3: #d79921; /* Muted purple */
+}
+.chipletContainerInner__10651{
+        border-radius: 4px !important;
 }
