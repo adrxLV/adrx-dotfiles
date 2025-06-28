@@ -108,26 +108,7 @@ body {
 .chipletContainerInner__10651 {
     background-color: var(--bg-3);
     color: var(--text-2);
-    font-family: var(--font);
-    font-size: 14px;
-    padding: 4px 8px;
     border-radius: 4px;
-    transition: all 0.2s ease;
 }
 
-.chipletContainerInner__10651:hover {
-    background-color: var(--hover);
-    color: var(--white);
-}
 
-.chipletContainerInner__10651:focus {
-    outline: none;
-    box-shadow: 0 0 5px 2px var(--accent-2);
-}
-
-@media (max-width: 768px) {
-    .chipletContainerInner__10651 {
-        font-size: 12px;
-        padding: 4px 6px;
-    }
-}
