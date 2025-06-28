@@ -34,7 +34,7 @@ body {
     --dms-icon-color-before: var(--icon-secondary);
     --dms-icon-color-after: var(--white);
     --custom-dms-background: image;
-    --dms-background-image-url: url('https://raw.githubusercontent.com/catppuccin/catppuccin/refs/heads/main/assets/logos/exports/macchiato_square.png');
+    --dms-background-image-url: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Circle-A_red.svg/1200px-Circle-A_red.svg.png');
     --dms-background-image-size: cover;
     --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2));
     --background-image: off;
