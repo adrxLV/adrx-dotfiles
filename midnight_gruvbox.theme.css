@@ -1,4 +1,4 @@
-﻿/**
+/**
  * @name gru0vbox-vermelho
  * @description A dark theme with Gruvbox colors focused on red shades for Discord.
  * @author: refact0r - moded by @adrx_lv "Anomaly".
@@ -108,7 +108,15 @@ body {
 .chipletContainerInner__10651 {
     background-color: var(--bg-3);
     color: var(--text-2);
+    font-family: var(--font);
+    font-size: 14px;
+    padding: 4px 8px;
     border-radius: 4px;
+}
+
+.chipletContainerInner__10651:hover {
+    background-color: var(--hover);
+    color: var(--white);
 }
 
 
